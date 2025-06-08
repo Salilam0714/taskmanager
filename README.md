@@ -28,14 +28,14 @@ This is a learning project focused on mastering Java, Spring Boot, and software 
 ---
 
 ## 📂 Project Structure
-
+```
 taskmanager/
 ├── controller/ # REST controllers (TaskController)
 ├── service/ # Business logic (TaskService)
 ├── model/ # JPA entity (Task)
 ├── repository/ # Data access layer (TaskRepository)
 └── /resources/ application.properties
-
+```
 
 ---
 
@@ -56,21 +56,24 @@ cd taskmanager
 
 # 2. Run the app using Maven
 ./mvnw spring-boot:run
-
+```
 # 3. App will start at:
 http://localhost:8080
-```
+
 ---
 
 ### 🧪 API Endpoints (Use Postman or curl)
-Method	    Endpoint                    Description
-GET	        /tasks	                    Get all tasks
-GET	        /tasks/{id}	                Get a task by ID
-GET	        /tasks/filter?completed=	  Filter tasks by completion
-GET	        /tasks/search?keyword=	    Search tasks by title
-POST	      /tasks	                    Create a new task
-PUT	        /tasks/{id}	                Update a task
-DELETE	    /tasks/{id}	                Delete a task
+
+| Method | Endpoint                    | Description                 |
+|--------|-----------------------------|-----------------------------|
+| GET    | /tasks                      | Get all tasks               |
+| GET    | /tasks/{id}                 | Get a task by ID            |
+| GET    | /tasks/filter?completed=    | Filter tasks by completion  |
+| GET    | /tasks/search?keyword=      | Search tasks by title       |
+| POST   | /tasks                      | Create a new task           |
+| PUT    | /tasks/{id}                 | Update a task               |
+| DELETE | /tasks/{id}                 | Delete a task               |
+
 
 ---
 
