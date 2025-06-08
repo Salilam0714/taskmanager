@@ -59,24 +59,31 @@ cd taskmanager
 
 # 3. App will start at:
 http://localhost:8080
-
+```
+---
 
 ### 🧪 API Endpoints (Use Postman or curl)
-Method	Endpoint Description
-GET	/tasks	Get all tasks
-GET	/tasks/{id}	Get a task by ID
-GET	/tasks/filter?completed=	Filter tasks by completion
-GET	/tasks/search?keyword=	Search tasks by title
-POST	/tasks	Create a new task
-PUT	/tasks/{id}	Update a task
-DELETE	/tasks/{id}	Delete a task
+Method	    Endpoint                    Description
+GET	        /tasks	                    Get all tasks
+GET	        /tasks/{id}	                Get a task by ID
+GET	        /tasks/filter?completed=	  Filter tasks by completion
+GET	        /tasks/search?keyword=	    Search tasks by title
+POST	      /tasks	                    Create a new task
+PUT	        /tasks/{id}	                Update a task
+DELETE	    /tasks/{id}	                Delete a task
+
+---
 
 ### 💡 Example JSON(POST body)
+```json
 {
   "title": "Learn Spring Boot",
   "description": "Understand how to build REST APIs",
   "completed": false
 }
+```
+
+---
 
 ### 📌 Future Plans
 - Switch database from H2 to MySQL
@@ -86,6 +93,8 @@ DELETE	/tasks/{id}	Delete a task
 - Add exception handling and validation
 
 - Add unit & integration tests
+
+---
 
 ## 🙋‍♂️ Author
 - **Name**: Yingtong Lin
