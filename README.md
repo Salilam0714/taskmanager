@@ -10,6 +10,7 @@ This is a learning project focused on mastering Java, Spring Boot, and software 
 - Create, read, update, and delete tasks (CRUD)
 - Filter tasks by completion status (`completed=true/false`)
 - Search tasks by title keyword (`search?keyword=xxx`)
+- Toggle task completion (`/{id}/toggle`)
 - Layered architecture: Controller → Service → Repository
 - In-memory H2 database for easy development/testing
 - Uses Lombok for cleaner model code
@@ -49,30 +50,33 @@ taskmanager/
 
 ### Steps
 
+
+- 1. Clone the repo
 ```bash
-# 1. Clone the repo
 git clone https://github.com/Salilam0714/taskmanager.git
 cd taskmanager
-
-# 2. Run the app using Maven
+```
+- 2. Run the app using Maven
+```bash
 ./mvnw spring-boot:run
 ```
-# 3. App will start at:
+- 3. App will start at:
 http://localhost:8080
 
 ---
 
 ### 🧪 API Endpoints (Use Postman or curl)
 
-| Method | Endpoint                    | Description                 |
-|--------|-----------------------------|-----------------------------|
-| GET    | /tasks                      | Get all tasks               |
-| GET    | /tasks/{id}                 | Get a task by ID            |
-| GET    | /tasks/filter?completed=    | Filter tasks by completion  |
-| GET    | /tasks/search?keyword=      | Search tasks by title       |
-| POST   | /tasks                      | Create a new task           |
-| PUT    | /tasks/{id}                 | Update a task               |
-| DELETE | /tasks/{id}                 | Delete a task               |
+| Method | Endpoint                    | Description                   |
+|--------|-----------------------------|-------------------------------|
+| GET    | /tasks                      | Get all tasks                 |
+| GET    | /tasks/{id}                 | Get a task by ID              |
+| GET    | /tasks/filter?completed=    | Filter tasks by completion    |
+| GET    | /tasks/search?keyword=      | Search tasks by title         |
+| POST   | /tasks                      | Create a new task             |
+| PUT    | /tasks/{id}                 | Update a task                 |
+| PUT    | /tasks/{id}/toggle          | Toggle task completion status |
+| DELETE | /tasks/{id}                 | Delete a task                 |
 
 
 ---
