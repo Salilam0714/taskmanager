@@ -26,13 +26,22 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public Task getTaskById(Long id) {
         return taskRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Task not found with id: " + id));
+                .orElseThrow(() -> new RuntimeException("Hmm... there is no task with id " + id));
     }           //use the optional method .orElseThrow() to handle exception
                 //supplier
 
     @Override
     public List<Task> getTasksByTitle(String keyword) {
         return taskRepository.findByTitleContainingIgnoreCase(keyword);
+    }
+
+    @Override
+    public List<Task> getTasksSortedByCreatedAt(String order){
+        if ("desc".equalsIgnoreCase(order)) {
+            return taskRepository.findAllByOrderByCreatedAtDesc();
+        } else {
+            return taskRepository.findAllByOrderByCreatedAtAsc();
+        }
     }
 
     @Override
@@ -51,8 +60,17 @@ public class TaskServiceImpl implements TaskService {
             task.setCompleted(taskDetails.isCompleted()); //set the new state
             return taskRepository.save(task); //then save the update
         } else {
-            throw new RuntimeException("Task not found with id " + id); //exception handling!
+            throw new RuntimeException("Hmm... there is no task with id " + id); //exception handling!
         }
+    }
+
+    @Override
+    public Task toggleTaskCompleted(Long id){
+        Task task = taskRepository.findById(id)
+        .orElseThrow(() -> new RuntimeException("Hmm... there is no task with id " + id));
+
+        task.setCompleted(!task.isCompleted());
+        return taskRepository.save(task);
     }
 
     @Override

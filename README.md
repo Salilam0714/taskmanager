@@ -11,6 +11,7 @@ This is a learning project focused on mastering Java, Spring Boot, and software 
 - Filter tasks by completion status (`completed=true/false`)
 - Search tasks by title keyword (`search?keyword=xxx`)
 - Toggle task completion (`/{id}/toggle`)
+- Sort tasks by creation time (`?sort=asc/desc`)
 - Layered architecture: Controller → Service → Repository
 - In-memory H2 database for easy development/testing
 - Uses Lombok for cleaner model code
@@ -67,12 +68,13 @@ http://localhost:8080
 
 ### 🧪 API Endpoints (Use Postman or curl)
 
-| Method | Endpoint                    | Description                   |
-|--------|-----------------------------|-------------------------------|
-| GET    | /tasks                      | Get all tasks                 |
-| GET    | /tasks/{id}                 | Get a task by ID              |
-| GET    | /tasks/filter?completed=    | Filter tasks by completion    |
-| GET    | /tasks/search?keyword=      | Search tasks by title         |
+| Method | Endpoint                     | Description                   |
+|--------|----------------------------- |-------------------------------|
+| GET    | /tasks                       | Get all tasks                 |
+| GET    | /tasks/{id}                  | Get a task by ID              |
+| GET    | /tasks/filter?completed=     | Filter tasks by completion    |
+| GET    | /tasks/search?keyword=       | Search tasks by title         |
+| GET    | /tasks/sorted?order=ase or desc| Sort tasks by creation time         |
 | POST   | /tasks                      | Create a new task             |
 | PUT    | /tasks/{id}                 | Update a task                 |
 | PUT    | /tasks/{id}/toggle          | Toggle task completion status |
